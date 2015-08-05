@@ -1,3 +1,3 @@
 Snacklist.org
 
-A free, open source snack engine
+A free, open source snack food search engine
