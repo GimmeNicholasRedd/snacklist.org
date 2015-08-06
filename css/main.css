@@ -112,6 +112,56 @@ html, body {
     padding: 0;
 }
 
+header {
+    width: 100vw;
+    height: 100px;
+    background-color: yellow;
+}
+
+#navigation_container {
+    width: 100vw;
+}
+
+ul.navigation {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+
+ul.navigation li {
+    width: calc(100vw / 3);
+    background-color: white;
+    display: table-cell;
+    cursor: pointer;
+    text-align: center;
+    transition: all 1s;
+    vertical-align: middle;
+}
+
+.tab-link.current {
+    background-color: #999999;
+    transition: all 1s;
+}
+
+.tab-content {
+    display: none;
+    background: #ededed;
+}
+
+.tab-content.current {
+    display: inherit;
+}
+
+#snack_box {
+    width: 100vw;
+    display: table;
+    text-align: center;
+}
+
+h1 {
+    font-size: 40px;
+
+}
 /* ==========================================================================
    Helper classes
    ========================================================================== */

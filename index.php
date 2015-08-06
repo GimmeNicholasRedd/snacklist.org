@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <!-- <link rel="apple-touch-icon" href="apple-touch-icon.png"> -->
     <link
         href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic'
         rel='stylesheet' type='text/css'>
@@ -25,33 +25,56 @@
     your browser</a> to improve your experience.</p>
 <![endif]-->
 
+<header>
 
-<?php
-// Connect to database server
-//mysql_connect("mysql.myhost.com", "user", "sesame") or die (mysql_error ());
+</header>
+<div id="navigation_container">
+    <ul class="navigation">
+        <li class="tab-link current" data-tab="tab-1"><h1>Search</h1></li>
+        <li class="tab-link" data-tab="tab-2"><h1>Upload</h1></li>
+        <li class="tab-link" data-tab="tab-3"><h1>About</h1></li>
+    </ul>
 
-// Select database
-mysql_select_db("SNACKLIST.ORG") or die(mysql_error());
-$query = "INSERT INTO Snacks (id, name, timestamp) VALUES (NULL, 'swag', CURRENT_TIMESTAMP);";
-// SQL query
-$strSQL = "SELECT * FROM Snacks";
+    <div id="tab-1" class="tab-content current">
+        SWAG
+        <div id="snack_box">
 
-// Execute the query (the recordset $rs contains the result)
-$rs = mysql_query($query);
-$rs = mysql_query($strSQL);
+            <?php
+            // Connect to database server
+            //mysql_connect("mysql.myhost.com", "user", "sesame") or die (mysql_error ());
 
-// Loop the recordset $rs
-// Each row will be made into an array ($row) using mysql_fetch_array
-while ($row = mysql_fetch_array($rs)) {
+            // Select database
+            mysql_select_db("SNACKLIST.ORG") or die(mysql_error());
+            $query = "INSERT INTO Snacks (id, name, timestamp) VALUES (NULL, 'swag', CURRENT_TIMESTAMP);";
+            // SQL query
+            $strSQL = "SELECT * FROM Snacks";
 
-    // Write the value of the column FirstName (which is now in the array $row)
-    echo $row['id'] . $row['name'] . $row['timestamp'] . "<br />";
+            // Execute the query (the recordset $rs contains the result)
+            $rs = mysql_query($query);
+            $rs = mysql_query($strSQL);
 
-}
+            // Loop the recordset $rs
+            // Each row will be made into an array ($row) using mysql_fetch_array
+            while ($row = mysql_fetch_array($rs)) {
 
-// Close the database connection
-mysql_close();
-?>
+                // Write the value of the column FirstName (which is now in the array $row)
+                echo $row['id'] . $row['name'] . $row['timestamp'] . "<br />";
+
+            }
+
+            // Close the database connection
+            mysql_close();
+            ?>
+        </div>
+    </div>
+    <div id="tab-2" class="tab-content">
+        DOUBLESWAG
+    </div>
+    <div id="tab-3" class="tab-content">
+        TRIPLESWAG
+    </div>
+</div>
+
 
 <!-- Add your site or application content here -->
 
